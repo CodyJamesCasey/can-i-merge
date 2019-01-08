@@ -1,12 +1,4 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
   align-items: center;
   background-color: #282c34;
   color: white;
@@ -15,14 +7,19 @@
   font-size: calc(48px + 2vmin);
   justify-content: center;
   min-height: 100vh;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.App-header .is-positive {
+.App-logo {
+  height: 40vmin;
+}
+
+.App .is-positive {
   color: #61dafb;
 }
 
-.App-header .is-negative {
+.App .is-negative {
   color: red;
 }
 
