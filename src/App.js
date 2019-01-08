@@ -11,25 +11,25 @@ class App extends Component {
   }
 
   render() {
-    const { data, loading } = this.props;
+    const { data, loading, error } = this.props;
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Can I merge?</h1>
-          <img src={mattSmash} className="App-logo" alt="mattSmash" />
-          <p>
-            {loading ? (
-              "Loading..."
-            ) : data.allPermissions.find(
-                permission => permission.name === "isAllowedToMerge"
-              ).value ? (
-              <span className="is-positive">Yes, smash that code up!</span>
-            ) : (
-              <span className="is-negative">No, hold your smashing.</span>
-            )}
-          </p>
-        </header>
+        <h2>Can I merge?</h2>
+        <img src={mattSmash} className="App-logo" alt="mattSmash" />
+        <p>
+          {loading ? (
+            "Loading..."
+          ) : error ? (
+            "Something broke. Matt probably smashed it..."
+          ) : data.allPermissions.find(
+              permission => permission.name === "isAllowedToMerge"
+            ).value ? (
+            <span className="is-positive">Yes, smash that code up!</span>
+          ) : (
+            <span className="is-negative">No, hold your smashing.</span>
+          )}
+        </p>
       </div>
     );
   }
